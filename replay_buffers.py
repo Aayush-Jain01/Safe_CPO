@@ -4,6 +4,9 @@ import core
 from ppo_utils.logx import EpochLogger
 from ppo_utils.mpi_pytorch import setup_pytorch_for_mpi, sync_params, mpi_avg_grads
 from ppo_utils.mpi_tools import mpi_fork, mpi_avg, proc_id, mpi_statistics_scalar, num_procs
+
+#GAE is implemented in the buffer itself
+
 class TD3Buffer(object):
     def __init__(self, state_dim, action_dim, max_size=int(1e6)):
         self.max_size = max_size
